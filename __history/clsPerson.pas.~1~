@@ -1,0 +1,29 @@
+unit clsPerson;
+
+interface
+
+type
+  TPerson = class
+    private
+    name: string;
+    email: string;
+    age: integer;
+
+    public
+    procedure Create(name, email : string; age: integer);
+    procedure SetName(name: string);
+    procedure SetEmail(emial: string);
+    procedure SetAge(age: integer);
+
+    function GetName: string;
+    function GetEmail: string;
+    function GetAge: integer;
+
+  end;
+
+implementation
+
+procedure TPerson.Create(name: email: string; age: integer);
+begin
+
+end.

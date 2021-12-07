@@ -1,0 +1,53 @@
+unit clsCustomer;
+
+interface
+
+uses clsPerson,Vcl.Dialogs,Winapi.Messages,System.SysUtils;
+
+type
+  TCustomer = class(TPerson)
+
+private
+  email: string;
+
+
+public
+  Constructor Create(name,anEmail: string; age: integer);
+  procedure SetEmail(anEmail: string);
+  procedure PrintInfo; override;
+
+  function GetInfo: string; override;
+  function GetEmail: string;
+
+end;
+
+implementation
+
+constructor TCustomer.Create(name, anEmail: string; age: integer);
+begin
+  inherited Create(name,age);
+  email := anEmail;
+end;
+
+procedure TCustomer.SetEmail(anEmail: string);
+begin
+  email:= anEmail;
+end;
+
+function TCustomer.GetEmail: string;
+begin
+  result:= email;
+end;
+
+procedure TCustomer.PrintInfo;
+begin
+  //inherited printInfo;
+  ShowMessage(name + ' is a person and also a customer');
+end;
+
+function TCustomer.GetInfo: string;
+begin
+  result := name + ' ' + IntToStr(age) + ' ' + email;
+end;
+
+end.
